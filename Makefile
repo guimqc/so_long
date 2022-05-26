@@ -1,7 +1,5 @@
 SRCS = src/main.c src/valid_map.c
 
-OBJ = $(SRCS:%c=%o)
-
 NAME = so_long
 
 CC = gcc -Wall -Werror -Wextra -framework OpenGL -framework AppKit -o $(NAME)
@@ -22,3 +20,5 @@ clean:
 fclean: clean
 	cd libft && make fclean
 	$(RM) $(NAME)
+
+re: fclean all
