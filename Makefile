@@ -1,6 +1,4 @@
-SRCS = main.c
-
-OBJ = $(SRCS:%c=%o)
+SRCS = src/main.c
 
 NAME = so_long
 
@@ -9,3 +7,4 @@ CC = gcc -Wall -Werror -Wextra -Lmlx -lmlx -framework OpenGL -framework AppKit -
 RM = rm -f
 
 all:
+	$(CC) $(SRCS)
