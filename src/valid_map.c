@@ -11,3 +11,19 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+
+
+int	valid_map(int fd)
+{
+	(void) fd;
+	char	*next_line;
+	int		exit;
+	int		collectible;
+	int		starting_pos;
+
+	return (1);
+}
+
+// first and last line: 1s only
+// first and last char in each line: 1s only

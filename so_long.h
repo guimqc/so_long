@@ -18,4 +18,6 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+int	valid_map(int fd);
+
 #endif

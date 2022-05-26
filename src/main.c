@@ -14,7 +14,11 @@
 
 int	main(int argc, char *argv[])
 {
+	(void) argc;
+	(void) argv;
 	void	*mlx;
-	
-	mlx = mlx_init;
+	int		fd;
+
+	fd = open(argv[1], O_RDONLY);
+	valid_map(fd);
 }
