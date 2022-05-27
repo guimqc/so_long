@@ -23,10 +23,11 @@ $(NAME):
 
 clean:
 	cd libft && make clean -s
-	cd mlx && make clean -s
+	cd mlx && $(RM) *.o
 
 fclean: clean
 	cd libft && make fclean -s
+	cd mlx && make clean -s
 	$(RM) $(NAME) -s
 
 re: fclean all
