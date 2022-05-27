@@ -12,8 +12,6 @@
 
 #include "../so_long.h"
 
-
-
 int	valid_map(int fd)
 {
 	(void) fd;
@@ -27,3 +25,5 @@ int	valid_map(int fd)
 
 // first and last line: 1s only
 // first and last char in each line: 1s only
+// at least one collectible (C) and one exit(E)
+// one starting point(P)
