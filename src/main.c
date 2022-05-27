@@ -20,5 +20,9 @@ int	main(int argc, char *argv[])
 	int		fd;
 
 	fd = open(argv[1], O_RDONLY);
-	valid_map(fd);
+	if (!valid_map(fd))
+	{
+		ft_printf("Error\nThis map isn't valid");
+		exit(1);
+	}
 }
