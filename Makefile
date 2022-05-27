@@ -15,10 +15,10 @@ all:
 	$(CC) $(SRCS) $(LIB)
 
 clean:
-	cd libft && make clean
+	cd libft && make clean -s
 
 fclean: clean
-	cd libft && make fclean
-	$(RM) $(NAME)
+	cd libft && make fclean -s
+	$(RM) $(NAME) -s
 
 re: fclean all
