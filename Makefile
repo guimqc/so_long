@@ -1,4 +1,4 @@
-SRCS = src/main.c src/valid_map.c
+SRCS = src/main.c
 
 NAME = so_long
 
@@ -10,11 +10,16 @@ MAKELIB = cd libft && make -s
 
 LIB = libft/libft.a
 
+MAKELIBX = cd mlx && make -s
+
+LIBX = mlx/libmlx.a
+
 all: $(NAME)
 
 $(NAME):
 	$(MAKELIB)
-	$(CC) $(SRCS) $(LIB)
+	$(MAKELIBX)
+	$(CC) $(SRCS) $(LIB) $(LIBX)
 
 clean:
 	cd libft && make clean -s
