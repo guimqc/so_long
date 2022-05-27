@@ -17,12 +17,8 @@ int	main(int argc, char *argv[])
 	(void) argc;
 	(void) argv;
 	void	*mlx;
-	int		fd;
 
-	fd = open(argv[1], O_RDONLY);
-	if (!valid_map(fd))
-	{
-		ft_printf("Error\nThis map isn't valid");
-		exit(1);
-	}
+	mlx = mlx_init();
+
+	return(0);
 }
