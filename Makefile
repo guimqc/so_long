@@ -10,7 +10,9 @@ MAKELIB = cd libft && make -s
 
 LIB = libft/libft.a
 
-all:
+all: $(NAME)
+
+$(NAME):
 	$(MAKELIB)
 	$(CC) $(SRCS) $(LIB)
 
