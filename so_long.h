@@ -14,10 +14,8 @@
 # define SO_LONG_H
 
 # include "libft/libft.h"
-# include "minilibx/mlx.h"
+# include "mlx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
-
-int	valid_map(int fd);
 
 #endif
