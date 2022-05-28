@@ -12,14 +12,9 @@
 
 #include "../so_long.h"
 
-void	valid_map(char *map_path)
+void	is_map_valid(char *map_path)
 {
+	(void) map_path;
+
 	ft_printf("test\n");
-}
-
-int main()
-{
-	char	*map_path = "maps/map1.ber";
-
-	
 }

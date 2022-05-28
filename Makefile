@@ -1,4 +1,4 @@
-SRCS = src/main.c
+SRCS = src/main.c src/map.c
 
 NAME = so_long
 

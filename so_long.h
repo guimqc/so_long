@@ -18,6 +18,6 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-void	valid_map(char *map_path);
+void	is_map_valid(char *map_path);
 
 #endif

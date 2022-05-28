@@ -17,8 +17,8 @@ int	main(int argc, char *argv[])
 	(void) argv;
 	if (argc != 2)
 	{
-		ft_printf("Error:\nArgument error");
-		return (0);
+		ft_printf("Error:\nArgument error\n");
+		exit(1);
 	}
-	valid_map(argv[1]);
+	is_map_valid(argv[1]);
 }
