@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 16:49:50 by gvial             #+#    #+#             */
-/*   Updated: 2022/05/25 16:49:55 by gvial            ###   ########.fr       */
+/*   Created: 2022/05/26 11:46:01 by gvial             #+#    #+#             */
+/*   Updated: 2022/05/26 11:46:03 by gvial            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "../so_long.h"
 
-# include "libft/libft.h"
-# include "mlx/mlx.h"
-# include <fcntl.h>
-# include <stdio.h>
+void	valid_map(char *map_path)
+{
+	ft_printf("test\n");
+}
 
-void	valid_map(char *map_path);
+int main()
+{
+	char	*map_path = "maps/map1.ber";
 
-#endif
+	
+}
