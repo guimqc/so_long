@@ -14,9 +14,10 @@
 
 // read and save whole map as a string 
 // (probably save it in a struct too for later use)
-char	*read_map(char *map_path)
+char	*read_map(char *map_path, char **map_adress)
 {
 	(void) map_path;
+	(void) map_adress;
 	return (map_path);
 }
 

@@ -18,9 +18,14 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+typedef struct Game
+{
+	char	*map;
+}	t_game;
+
 // map
-char	*read_map(char *map_path);
-void	is_map_valid(char *map_path);
+char	*read_map(char *map_path, char **map_adress);
+void	is_map_valid(char *map);
 
 // error
 void	arg_error(void);

@@ -10,11 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	main(int argc, char *argv[])
 {
+	t_game	game;
+
 	if (argc != 2)
 		arg_error();
-	is_map_valid(argv[1]);
+	read_map(argv[1], &game.map);
+	is_map_valid(game.map);
 }

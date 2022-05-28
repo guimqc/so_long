@@ -1,4 +1,4 @@
-SRCS = src/*.c \
+SRCS = main.c src/*.c \
 
 NAME = so_long
 
