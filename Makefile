@@ -1,4 +1,4 @@
-SRCS = src/main.c src/map.c
+SRCS = src/main.c src/map.c src/error.c \
 
 NAME = so_long
 
@@ -23,11 +23,12 @@ $(NAME):
 
 clean:
 	cd libft && make clean -s
-	cd mlx && $(RM) *.o
 
 fclean: clean
 	cd libft && make fclean -s
-	cd mlx && make clean -s
 	$(RM) $(NAME) -s
 
 re: fclean all
+
+norm:
+	norminette $(SRCS) so_long.h

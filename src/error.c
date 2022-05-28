@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 11:46:01 by gvial             #+#    #+#             */
-/*   Updated: 2022/05/26 11:46:03 by gvial            ###   ########.fr       */
+/*   Created: 2022/05/28 13:42:11 by gvial             #+#    #+#             */
+/*   Updated: 2022/05/28 13:42:13 by gvial            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-// read and save whole map as a string 
-// (probably save it in a struct too for later use)
-char	*read_map(char *map_path)
+void	arg_error(void)
 {
-	(void) map_path;
-	return (map_path);
+	ft_printf("Error:\nArgument error\n");
+	exit(0);
 }
 
-// double loop that increment each time a \n is encountered
-// inner loop checks for map requirements in each line
-void	is_map_valid(char *map)
+void	map_error(void)
 {
-	(void) map;
+	ft_printf("Error:\nMap is not valid\n");
+	exit(0);
 }

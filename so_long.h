@@ -18,6 +18,12 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+// map
+char	*read_map(char *map_path);
 void	is_map_valid(char *map_path);
+
+// error
+void	arg_error(void);
+void	map_error(void);
 
 #endif
