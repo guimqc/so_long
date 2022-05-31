@@ -15,12 +15,13 @@
 void	read_map(char *map_path, char **map_adress)
 {
 	char	*next_line;
-	int		fd = open(map_path, O_RDONLY);
+	int		fd;
 
 	*map_adress = NULL;
+	fd = open(map_path, O_RDONLY);
 	if (fd == -1)
 		map_error();
-	while(1)
+	while (1)
 	{
 		next_line = get_next_line(fd);
 		if (next_line == NULL)
