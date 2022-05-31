@@ -13,8 +13,8 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "libft/libft.h"
-# include "mlx/mlx.h"
+# include "lib/libft/libft.h"
+# include "lib/mlx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
 
@@ -24,7 +24,7 @@ typedef struct Game
 }	t_game;
 
 // map
-char	*read_map(char *map_path, char **map_adress);
+void	read_map(char *map_path, char **map_adress);
 void	is_map_valid(char *map);
 
 // error

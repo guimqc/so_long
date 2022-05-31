@@ -10,15 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
-// read and save whole map as a string 
-// (probably save it in a struct too for later use)
-char	*read_map(char *map_path, char **map_adress)
+void	read_map(char *map_path, char **map_adress)
 {
-	(void) map_path;
-	(void) map_adress;
-	return (map_path);
+	char	*next_line;
+	int		fd = open(map_path, O_RDONLY);
+
+	*map_adress = NULL;
+	if (fd == -1)
+		map_error();
+	while(1)
+	{
+		next_line = get_next_line(fd);
+		if (next_line == NULL)
+			break ;
+		*map_adress = ft_strjoin_gnl(*map_adress, next_line);
+		free(next_line);
+	}
+	close(fd);
 }
 
 // double loop that increment each time a \n is encountered

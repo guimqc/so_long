@@ -1,18 +1,18 @@
-SRCS = main.c src/*.c \
+SRCS = main.c src/*.c src/map/*.c \
 
 NAME = so_long
 
-CC = gcc -Wall -Werror -Wextra -framework OpenGL -framework AppKit -o $(NAME)
+CC = gcc -Wall -Werror -Wextra -g -framework OpenGL -framework AppKit -o $(NAME)
 
 RM = rm -f
 
-MAKELIB = cd libft && make -s
+MAKELIB = cd lib/libft && make -s
 
-LIB = libft/libft.a
+LIB = lib/libft/libft.a
 
-MAKELIBX = cd mlx && make -s
+MAKELIBX = cd lib/mlx && make -s
 
-LIBX = mlx/libmlx.a
+LIBX = lib/mlx/libmlx.a
 
 all: $(NAME)
 
@@ -22,10 +22,10 @@ $(NAME):
 	$(CC) $(SRCS) $(LIB) $(LIBX)
 
 clean:
-	cd libft && make clean -s
+	cd lib/libft && make clean -s
 
 fclean: clean
-	cd libft && make fclean -s
+	cd lib/libft && make fclean -s
 	$(RM) $(NAME) -s
 
 re: fclean all
