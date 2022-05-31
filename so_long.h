@@ -32,8 +32,8 @@ typedef struct Game
 }	t_game;
 
 // map
-void	read_map(char *map_path, char **map_adress);
-void	is_map_valid(char *map);
+void	read_map(char *map_path, t_map *map);
+void	validate_map(t_map *map);
 
 // error
 void	arg_error(void);
