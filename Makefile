@@ -2,7 +2,7 @@ SRCS = main.c src/*.c \
 
 NAME = so_long
 
-CC = gcc -Wall -Werror -Wextra -g -framework OpenGL -framework AppKit -o $(NAME)
+CC = gcc -Wall -Werror -Wextra -framework OpenGL -framework AppKit -o $(NAME)
 
 RM = rm -f
 
