@@ -30,11 +30,12 @@ void	read_map(char *map_path, t_map *map)
 		map->map = ft_strjoin_gnl(map->map, next_line);
 		free(next_line);
 	}
+	validate_map(map);
 	close(fd);
 }
 
 // when map is fully read and logged look into the Map struct to see if it's a valid map
 void	validate_map(t_map *map)
 {
-	(void) map;
+	ft_printf("%s", map->map);
 }
