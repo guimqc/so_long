@@ -39,3 +39,5 @@ void	validate_map(t_map *map)
 {
 	ft_printf("%s", map->map);
 }
+
+// log_map_spec: if last char in line is \0 you know its last line and should be all 1s
