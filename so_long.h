@@ -18,9 +18,17 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-typedef struct Game
+typedef struct Map
 {
 	char	*map;
+	int		exit;
+	int		start;
+	int		collectible;
+}	t_map;
+
+typedef struct Game
+{
+	t_map map;
 }	t_game;
 
 // map

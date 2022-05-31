@@ -26,15 +26,15 @@ void	read_map(char *map_path, char **map_adress)
 		next_line = get_next_line(fd);
 		if (next_line == NULL)
 			break ;
+		is_map_valid(next_line);
 		*map_adress = ft_strjoin_gnl(*map_adress, next_line);
 		free(next_line);
 	}
 	close(fd);
 }
 
-// double loop that increment each time a \n is encountered
-// inner loop checks for map requirements in each line
-void	is_map_valid(char *map)
+// when map is fully read and logged look into the Map struct to see if it's a valid map
+void	is_map_valid(char *line)
 {
-	(void) map;
+	(void) line;
 }

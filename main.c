@@ -18,8 +18,7 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 		arg_error();
-	read_map(argv[1], &game.map);
-	is_map_valid(game.map); // pass game.map and verify if its valid
+	read_map(argv[1], &game.map.map);
 
-	free(game.map);
+	free(game.map.map);
 }
