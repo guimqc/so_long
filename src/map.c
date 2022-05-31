@@ -14,6 +14,13 @@
 
 static void	validate_map(t_map *map)
 {
+	int	i;
+	i = -1;
+	while (map->map[++i] != '\n')
+		if (map->map[i] != '1')
+			map_error();
+	i = (int)ft_strlen(map->map);
+	// verify that last line is only 1s
 	if (map->exit != 1)
 		map_error();
 	if (map->collectible < 1)
