@@ -33,7 +33,6 @@ typedef struct Game
 
 // map
 void	read_map(char *map_path, t_map *map);
-void	validate_map(t_map *map);
 
 // error
 void	arg_error(void);

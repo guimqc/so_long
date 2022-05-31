@@ -12,6 +12,36 @@
 
 #include "../so_long.h"
 
+static void	validate_map(t_map *map)
+{
+	if (map->exit != 1)
+		map_error();
+	if (map->collectible < 1)
+		map_error();
+	if (map->start != 1)
+		map_error();
+}
+
+static void	log_map_spec(t_map *map, char *next_line)
+{
+	int	i;
+
+	i = -1;
+	while (next_line[++i] != '\0')
+	{
+		if (i == 0 && next_line[i] != '1')
+			map_error();
+		if (next_line[i] == 'E')
+			map->exit += 1;
+		if (next_line[i] == 'P')
+			map->start += 1;
+		if (next_line[i] == 'C')
+			map->collectible += 1;
+	}
+	if (next_line[i - 2] != '1')
+		map_error();
+}
+
 void	read_map(char *map_path, t_map *map)
 {
 	char	*next_line;
@@ -26,18 +56,10 @@ void	read_map(char *map_path, t_map *map)
 		next_line = get_next_line(fd);
 		if (next_line == NULL)
 			break ;
-		// log_map_spec(next_line);
+		log_map_spec(map, next_line);
 		map->map = ft_strjoin_gnl(map->map, next_line);
 		free(next_line);
 	}
 	validate_map(map);
 	close(fd);
 }
-
-// when map is fully read and logged look into the Map struct to see if it's a valid map
-void	validate_map(t_map *map)
-{
-	ft_printf("%s", map->map);
-}
-
-// log_map_spec: if last char in line is \0 you know its last line and should be all 1s
