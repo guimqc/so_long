@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	if (argc != 2)
 		arg_error();
 	read_map(argv[1], &game.map);
-	ft_printf("%s\n", game.map.map);
-	ft_printf("#collectible: %i\n", game.map.collectible);
+	ft_printf("%s", game.map.map);
+
 	free(game.map.map);
 }
