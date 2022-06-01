@@ -21,6 +21,5 @@ int	main(int argc, char *argv[])
 	read_map(argv[1], &game.map);
 	ft_printf("%s\n", game.map.map);
 	ft_printf("#collectible: %i\n", game.map.collectible);
-
 	free(game.map.map);
 }

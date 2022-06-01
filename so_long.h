@@ -28,7 +28,7 @@ typedef struct Map
 
 typedef struct Game
 {
-	t_map map;
+	t_map	map;
 }	t_game;
 
 // map
