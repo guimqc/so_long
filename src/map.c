@@ -12,6 +12,8 @@
 
 #include "../so_long.h"
 
+// map has to be a rectangle
+
 static void	validate_map(t_map *map)
 {
 	int	i;

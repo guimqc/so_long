@@ -26,13 +26,23 @@ typedef struct Map
 	int		collectible;
 }	t_map;
 
+typedef struct Display
+{
+	void	*mlx;
+	void	*mlx_win;	
+}	t_display;
+
 typedef struct Game
 {
-	t_map	map;
+	t_map		map;
+	t_display	display;
 }	t_game;
 
 // map
 void	read_map(char *map_path, t_map *map);
+
+// display
+void	display_map(t_display *display);
 
 // error
 void	arg_error(void);
