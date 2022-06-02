@@ -14,13 +14,15 @@
 # define SO_LONG_H
 
 # include "lib/libft/libft.h"
-# include "lib/mlx/mlx.h"
+// # include "lib/mlx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
 
 typedef struct Map
 {
 	char	*map;
+	int		width;
+	int		height;
 	int		exit;
 	int		start;
 	int		collectible;
@@ -29,7 +31,7 @@ typedef struct Map
 typedef struct Display
 {
 	void	*mlx;
-	void	*mlx_win;	
+	void	*mlx_win;
 }	t_display;
 
 typedef struct Game
@@ -42,7 +44,7 @@ typedef struct Game
 void	read_map(char *map_path, t_map *map);
 
 // display
-void	display_map(t_display *display);
+// void	display_map(t_display *display);
 
 // error
 void	arg_error(void);

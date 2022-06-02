@@ -12,8 +12,6 @@
 
 #include "../so_long.h"
 
-// map has to be a rectangle
-
 static void	validate_map(t_map *map)
 {
 	int	i;
@@ -31,6 +29,8 @@ static void	validate_map(t_map *map)
 	if (map->collectible < 1)
 		map_error();
 	if (map->start != 1)
+		map_error();
+	if (map->height == map->width)
 		map_error();
 }
 
@@ -50,6 +50,8 @@ static void	log_map_spec(t_map *map, char *next_line)
 		if (next_line[i] == 'C')
 			map->collectible += 1;
 	}
+	if (map->width == -1)
+		map->width = i - 1;
 	if (next_line[i - 2] != '1')
 		map_error();
 }
@@ -59,6 +61,8 @@ void	read_map(char *map_path, t_map *map)
 	char	*next_line;
 	int		fd;
 
+	map->height = 0;
+	map->width = -1;
 	map->map = NULL;
 	fd = open(map_path, O_RDONLY);
 	if (fd == -1)
@@ -71,6 +75,7 @@ void	read_map(char *map_path, t_map *map)
 		log_map_spec(map, next_line);
 		map->map = ft_strjoin_gnl(map->map, next_line);
 		free(next_line);
+		map->height++;
 	}
 	validate_map(map);
 	close(fd);
