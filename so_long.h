@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "lib/libft/libft.h"
-// # include "lib/mlx/mlx.h"
+# include "lib/mlx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
 
@@ -44,7 +44,7 @@ typedef struct Game
 void	read_map(char *map_path, t_map *map);
 
 // display
-// void	display_map(t_display *display);
+void	display_map(t_display *display);
 
 // error
 void	arg_error(void);
