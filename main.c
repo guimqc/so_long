@@ -12,6 +12,14 @@
 
 #include "so_long.h"
 
+void	print_map_info(t_map map)
+{
+	ft_printf("%s\n", map.map);
+	ft_printf("height: %i\n", map.height);
+	ft_printf("width: %i\n", map.width);
+	ft_printf("#collectible %i\n", map.collectible);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_game	game;
@@ -19,10 +27,8 @@ int	main(int argc, char *argv[])
 	if (argc != 2)
 		arg_error();
 	read_map(argv[1], &game.map);
+	print_map_info(game.map);
 	// display_map(&game.display);
-	ft_printf("%s\n", game.map.map);
-	ft_printf("height: %i\n", game.map.height);
-	ft_printf("width: %i\n", game.map.width);
 
 	free(game.map.map);
 }

@@ -12,15 +12,21 @@
 
 #include "../so_long.h"
 
+// need to verify that the map_path is ending with .ber
+
 static void	validate_map(t_map *map)
 {
 	int	i;
+	int	map_len;
 
+	map_len = (int)ft_strlen(map->map);
+	if (map->map[map_len - 1] == '\n')
+		map_error();
 	i = -1;
 	while (map->map[++i] != '\n')
 		if (map->map[i] != '1')
 			map_error();
-	i = (int)ft_strlen(map->map);
+	i = map_len;
 	while (map->map[--i] != '\n')
 		if (map->map[i] != '1')
 			map_error();
@@ -39,7 +45,7 @@ static void	log_map_spec(t_map *map, char *next_line)
 	int	i;
 
 	i = -1;
-	while (next_line[++i] != '\0')
+	while (next_line[++i] != '\n' && next_line[i] != '\0')
 	{
 		if (i == 0 && next_line[i] != '1')
 			map_error();
@@ -51,8 +57,10 @@ static void	log_map_spec(t_map *map, char *next_line)
 			map->collectible += 1;
 	}
 	if (map->width == -1)
-		map->width = i - 1;
-	if (next_line[i - 2] != '1')
+		map->width = i;
+	if (i != map->width)
+		map_error();
+	if (next_line[i - 1] != '1')
 		map_error();
 }
 
