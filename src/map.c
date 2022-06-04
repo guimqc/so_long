@@ -69,7 +69,7 @@ static	void	validate_file_format(char *map_path)
 
 	format = ".ber";
 	last_four_letter = &map_path[ft_strlen(map_path) - 4];
-	if (ft_strncmp(format, last_four_letter, 4) != 0)
+	if (ft_strncmp(format, last_four_letter, 4))
 		map_error();
 }
 
