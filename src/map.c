@@ -12,8 +12,6 @@
 
 #include "../so_long.h"
 
-// need to verify that the map_path is ending with .ber
-
 static void	validate_map(t_map *map)
 {
 	int	i;
@@ -64,11 +62,22 @@ static void	log_map_spec(t_map *map, char *next_line)
 		map_error();
 }
 
+static	void	validate_file_format(char *map_path)
+{
+	char	*format = ".ber";
+	char	*last_four_letter;
+
+	last_four_letter = &map_path[ft_strlen(map_path) - 4];
+	if (ft_strncmp(format, last_four_letter, 4) != 0)
+		map_error();
+}
+
 void	read_map(char *map_path, t_map *map)
 {
 	char	*next_line;
 	int		fd;
 
+	validate_file_format(map_path);
 	fd = open(map_path, O_RDONLY);
 	if (fd == -1)
 		map_error();
