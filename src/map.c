@@ -64,9 +64,10 @@ static void	log_map_spec(t_map *map, char *next_line)
 
 static	void	validate_file_format(char *map_path)
 {
-	char	*format = ".ber";
+	char	*format;
 	char	*last_four_letter;
 
+	format = ".ber";
 	last_four_letter = &map_path[ft_strlen(map_path) - 4];
 	if (ft_strncmp(format, last_four_letter, 4) != 0)
 		map_error();
