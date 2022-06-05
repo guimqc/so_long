@@ -12,6 +12,16 @@
 
 #include "../so_long.h"
 
+static void	init_map(t_map *map)
+{
+	map->map = NULL;
+	map->width = -1;
+	map->height = 0;
+	map->exit = 0;
+	map->start = 0;
+	map->collectible = 0;
+}
+
 static void	validate_map(t_map *map)
 {
 	int	i;
@@ -78,6 +88,7 @@ void	read_map(char *map_path, t_map *map)
 	char	*next_line;
 	int		fd;
 
+	init_map(map);
 	validate_file_format(map_path);
 	fd = open(map_path, O_RDONLY);
 	if (fd == -1)
