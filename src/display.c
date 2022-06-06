@@ -16,16 +16,20 @@
 
 static	void	create_img(t_display *display)
 {
-	display->wall = mlx_xpm_file_to_image(display->mlx, "../img/wall.xpm", &display->img_width, &display->img_height);
-	display->floor = mlx_xpm_file_to_image(display->mlx, "../img/floor.xpm", &display->img_width, &display->img_height);
-	display->player = mlx_xpm_file_to_image(display->mlx, "../img/player.xpm", &display->img_width, &display->img_height);
+	display->wall = mlx_xpm_file_to_image(display->mlx, "./img/wall.xpm", &display->img_width, &display->img_height);
+	display->floor = mlx_xpm_file_to_image(display->mlx, "./img/floor.xpm", &display->img_width, &display->img_height);
+	display->player = mlx_xpm_file_to_image(display->mlx, "./img/player.xpm", &display->img_width, &display->img_height);
 }
 
 void	display_map(t_display *display)
 {
 	display->mlx = mlx_init();
-	create_img(display);
 	display->mlx_win = mlx_new_window(display->mlx, 700, 500, "so_long");
-	mlx_put_image_to_window(display->mlx, display->mlx_win, display->wall, 50, 50);
+	create_img(display);
+	mlx_put_image_to_window(display->mlx, display->mlx_win, display->wall, 0, 0);
+	mlx_put_image_to_window(display->mlx, display->mlx_win, display->wall, 65, 0);
+	mlx_put_image_to_window(display->mlx, display->mlx_win, display->wall, 0, 65);
+	mlx_put_image_to_window(display->mlx, display->mlx_win, display->floor, 65, 65);
+	mlx_put_image_to_window(display->mlx, display->mlx_win, display->player, 65, 65);
 	mlx_loop(display->mlx);
 }
