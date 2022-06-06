@@ -93,9 +93,6 @@ void	read_map(char *map_path, t_map *map)
 	fd = open(map_path, O_RDONLY);
 	if (fd == -1)
 		map_error();
-	map->height = 0;
-	map->width = -1;
-	map->map = NULL;
 	while (1)
 	{
 		next_line = get_next_line(fd);
