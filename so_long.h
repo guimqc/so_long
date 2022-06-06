@@ -32,6 +32,11 @@ typedef struct Display
 {
 	void	*mlx;
 	void	*mlx_win;
+	void	*wall;
+	void	*exit;
+	void	*floor;
+	void	*player;
+	void	*collectible;
 }	t_display;
 
 typedef struct Game
