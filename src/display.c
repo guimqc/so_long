@@ -12,11 +12,20 @@
 
 #include "../so_long.h"
 
-// create images and save them into eg. display->wall_img
+// create images and save them into eg. display->wall
+
+static	void	create_img(t_display *display)
+{
+	display->wall = mlx_xpm_file_to_image(display->mlx, "../img/wall.xpm", &display->img_width, &display->img_height);
+	display->floor = mlx_xpm_file_to_image(display->mlx, "../img/floor.xpm", &display->img_width, &display->img_height);
+	display->player = mlx_xpm_file_to_image(display->mlx, "../img/player.xpm", &display->img_width, &display->img_height);
+}
 
 void	display_map(t_display *display)
 {
 	display->mlx = mlx_init();
+	create_img(display);
 	display->mlx_win = mlx_new_window(display->mlx, 700, 500, "so_long");
+	mlx_put_image_to_window(display->mlx, display->mlx_win, display->wall, 50, 50);
 	mlx_loop(display->mlx);
 }
