@@ -32,6 +32,8 @@ typedef struct Display
 {
 	void	*mlx;
 	void	*mlx_win;
+	int		img_width;
+	int		img_height;
 	void	*wall;
 	void	*exit;
 	void	*floor;
