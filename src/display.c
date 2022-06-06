@@ -16,9 +16,9 @@
 
 static	void	create_img(t_display *display)
 {
-	display->wall = mlx_xpm_file_to_image(display->mlx, "./img/wall.xpm", &display->img_width, &display->img_height);
-	display->floor = mlx_xpm_file_to_image(display->mlx, "./img/floor.xpm", &display->img_width, &display->img_height);
-	display->player = mlx_xpm_file_to_image(display->mlx, "./img/player.xpm", &display->img_width, &display->img_height);
+	display->wall = mlx_xpm_file_to_image(display->mlx, "img/wall.xpm", &display->img_width, &display->img_height);
+	display->floor = mlx_xpm_file_to_image(display->mlx, "img/floor.xpm", &display->img_width, &display->img_height);
+	display->player = mlx_xpm_file_to_image(display->mlx, "img/player.xpm", &display->img_width, &display->img_height);
 }
 
 void	display_map(t_display *display)
