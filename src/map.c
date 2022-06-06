@@ -55,8 +55,6 @@ static void	log_map_spec(t_map *map, char *next_line)
 	i = -1;
 	while (next_line[++i] != '\n' && next_line[i] != '\0')
 	{
-		if (i == 0 && next_line[i] != '1')
-			map_error();
 		if (next_line[i] == 'E')
 			map->exit += 1;
 		if (next_line[i] == 'P')
@@ -67,6 +65,8 @@ static void	log_map_spec(t_map *map, char *next_line)
 	if (map->width == -1)
 		map->width = i;
 	if (i != map->width)
+		map_error();
+	if (next_line[0] != '1')
 		map_error();
 	if (next_line[i - 1] != '1')
 		map_error();
