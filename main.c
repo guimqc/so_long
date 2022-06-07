@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 		arg_error();
 	read_map(argv[1], &game.map);
 	print_map_info(game.map);
-	display_map(&game.display);
+	display_map(&game);
 
 	free(game.map.map);
 }

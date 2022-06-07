@@ -51,7 +51,7 @@ typedef struct Game
 void	read_map(char *map_path, t_map *map);
 
 // display
-void	display_map(t_display *display);
+void	display_map(t_game *game);
 
 // error
 void	arg_error(void);
