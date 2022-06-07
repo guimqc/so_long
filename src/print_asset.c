@@ -21,6 +21,8 @@ void	print_wall(t_game *game, int x, int y)
 void	print_player(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
+		game->display.floor, 65 * x, 65 * y);
+	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.player, 65 * x, 65 * y);
 }
 
