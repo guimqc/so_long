@@ -52,6 +52,9 @@ void	read_map(char *map_path, t_map *map);
 
 // display
 void	display_map(t_game *game);
+void	print_wall(t_game *game, int x, int y);
+void	print_floor(t_game *game, int x, int y);
+void	print_player(t_game *game, int x, int y);
 
 // error
 void	arg_error(void);
