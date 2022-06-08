@@ -12,7 +12,6 @@
 
 #include "../so_long.h"
 
-
 void	print_map(t_game *game)
 {
 	int	i;
@@ -47,7 +46,7 @@ static	void	create_img(t_display *display)
 			&display->img_width, &display->img_height);
 	display->player = mlx_xpm_file_to_image(display->mlx, "img/player.xpm",
 			&display->img_width, &display->img_height);
-	display->collectible = mlx_xpm_file_to_image(display->mlx, "img/collectible.xpm",
+	display->collectible = mlx_xpm_file_to_image(display->mlx, "img/coll.xpm",
 			&display->img_width, &display->img_height);
 	display->exit = mlx_xpm_file_to_image(display->mlx, "img/exit.xpm",
 			&display->img_width, &display->img_height);
