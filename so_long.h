@@ -53,6 +53,7 @@ typedef struct Game
 void	read_map(char *map_path, t_map *map);
 
 // display
+void	print_map(t_game *game);
 void	display_map(t_game *game);
 void	print_wall(t_game *game, int x, int y);
 void	print_exit(t_game *game, int x, int y);

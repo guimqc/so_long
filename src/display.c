@@ -13,7 +13,7 @@
 #include "../so_long.h"
 
 
-static	void	print_map(t_game *game)
+void	print_map(t_game *game)
 {
 	int	i;
 
