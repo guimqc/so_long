@@ -60,5 +60,4 @@ void	display_map(t_game *game)
 	game->display.mlx_win = mlx_new_window(game->display.mlx,
 			65 * game->map.width, 65 * game->map.height, "so_long");
 	print_map(game);
-	mlx_loop(game->display.mlx);
 }

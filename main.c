@@ -20,5 +20,9 @@ int	main(int argc, char *argv[])
 		arg_error();
 	read_map(argv[1], &game.map);
 	display_map(&game);
+	// place hooks between display_map and mlx_loop to print image on top of existing one and print player on new spot
+	mlx_put_image_to_window(game.display.mlx, game.display.mlx_win, game.display.floor, 65 * 1, 65 * 3);
+	mlx_put_image_to_window(game.display.mlx, game.display.mlx_win, game.display.player, 65 * 3, 65 * 2);
+	mlx_loop(game.display.mlx);
 	free(game.map.map);
 }
