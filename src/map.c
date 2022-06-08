@@ -14,11 +14,13 @@
 
 static void	init_map(t_map *map)
 {
+	map->x = 0;
+	map->y = 0;
 	map->map = NULL;
-	map->width = -1;
-	map->height = 0;
 	map->exit = 0;
 	map->start = 0;
+	map->width = -1;
+	map->height = 0;
 	map->collectible = 0;
 }
 

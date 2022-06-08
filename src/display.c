@@ -13,30 +13,25 @@
 #include "../so_long.h"
 
 
-static	void	create_map(t_game *game)
+static	void	print_map(t_game *game)
 {
 	int	i;
-	int	x;
-	int	y;
 
-	x = 0;
-	y = 0;
-	i = 0;
-	while (game->map.map[i] != '\0')
+	i = -1;
+	while (game->map.map[++i] != '\0')
 	{
 		if (game->map.map[i] == '1')
-			print_wall(game, x, y);
+			print_wall(game, game->map.x, game->map.y);
 		if (game->map.map[i] == '0')
-			print_floor(game, x, y);
+			print_floor(game, game->map.x, game->map.y);
 		if (game->map.map[i] == 'P')
-			print_player(game, x, y);
+			print_player(game, game->map.x, game->map.y);
 		if (game->map.map[i] == '\n')
 		{
-			x = -1;
-			y++;
+			game->map.x = -1;
+			game->map.y++;
 		}
-		x++;
-		i++;
+		game->map.x++;
 	}
 }
 
@@ -56,6 +51,6 @@ void	display_map(t_game *game)
 	create_img(&game->display);
 	game->display.mlx_win = mlx_new_window(game->display.mlx,
 			65 * game->map.width, 65 * game->map.height, "so_long");
-	create_map(game);
+	print_map(game);
 	mlx_loop(game->display.mlx);
 }
