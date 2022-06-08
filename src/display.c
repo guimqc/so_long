@@ -26,6 +26,10 @@ static	void	print_map(t_game *game)
 			print_floor(game, game->map.x, game->map.y);
 		if (game->map.map[i] == 'P')
 			print_player(game, game->map.x, game->map.y);
+		if (game->map.map[i] == 'C')
+			print_collectible(game, game->map.x, game->map.y);
+		if (game->map.map[i] == 'E')
+			print_exit(game, game->map.x, game->map.y);
 		if (game->map.map[i] == '\n')
 		{
 			game->map.x = -1;
@@ -42,6 +46,10 @@ static	void	create_img(t_display *display)
 	display->floor = mlx_xpm_file_to_image(display->mlx, "img/floor.xpm",
 			&display->img_width, &display->img_height);
 	display->player = mlx_xpm_file_to_image(display->mlx, "img/player.xpm",
+			&display->img_width, &display->img_height);
+	display->collectible = mlx_xpm_file_to_image(display->mlx, "img/collectible.xpm",
+			&display->img_width, &display->img_height);
+	display->exit = mlx_xpm_file_to_image(display->mlx, "img/exit.xpm",
 			&display->img_width, &display->img_height);
 }
 
