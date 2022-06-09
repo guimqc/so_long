@@ -30,6 +30,8 @@ void	print_player(t_game *game, int x, int y)
 		game->display.floor, 65 * x, 65 * y);
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.player, 65 * x, 65 * y);
+	game->player.x = x;
+	game->player.y = y;
 }
 
 void	print_exit(t_game *game, int x, int y)

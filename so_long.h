@@ -30,6 +30,12 @@ typedef struct Map
 	int		collectible;
 }	t_map;
 
+typedef struct Player
+{
+	int	x;
+	int	y;
+}	t_player;
+
 typedef struct Display
 {
 	void	*mlx;
@@ -46,6 +52,7 @@ typedef struct Display
 typedef struct Game
 {
 	t_map		map;
+	t_player	player;
 	t_display	display;
 }	t_game;
 
