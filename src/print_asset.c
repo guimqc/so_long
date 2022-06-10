@@ -12,6 +12,7 @@
 
 #include "../so_long.h"
 
+// register the (x, y) position of the walls when printed
 void	print_wall(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
@@ -40,6 +41,7 @@ void	print_player(t_game *game, int x, int y)
 	game->player.moove += 1;
 }
 
+//  register the (x, y) position of the exit when printed.
 void	print_exit(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
@@ -48,6 +50,7 @@ void	print_exit(t_game *game, int x, int y)
 		game->display.exit, 65 * x, 65 * y);
 }
 
+// register the (x, y) position of each collectible when printed.
 void	print_collectible(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
