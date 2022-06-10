@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "lib/libft/libft.h"
-# include "lib/mlx/mlx.h"
+# include <mlx.h>
 # include <fcntl.h>
 # include <stdio.h>
 
