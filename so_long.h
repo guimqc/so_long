@@ -34,6 +34,7 @@ typedef struct Player
 {
 	int	x;
 	int	y;
+	int	moove;
 }	t_player;
 
 typedef struct Display

@@ -24,6 +24,7 @@ void	init_game(t_game *game)
 	game->map.collectible = 0;
 	game->player.x = 0;
 	game->player.y = 0;
+	game->player.moove = -1;
 }
 
 int	main(int argc, char *argv[])
