@@ -20,3 +20,10 @@ int	key_hook(int keycode, t_game *game)
 		exit(0);
 	return (0);
 }
+
+int	mouse_hook(int mousecode, t_game *game)
+{
+	(void) *game;
+	ft_printf("mouse_code: %i\n", mousecode);
+	return (0);
+}

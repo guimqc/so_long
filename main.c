@@ -37,6 +37,7 @@ int	main(int argc, char *argv[])
 	read_map(argv[1], &game.map);
 	display_map(&game);
 	mlx_key_hook(game.display.mlx_win, key_hook, &game);
+	mlx_mouse_hook(game.display.mlx_win, mouse_hook, &game);
 	mlx_loop(game.display.mlx);
 	free(game.map.map);
 }
