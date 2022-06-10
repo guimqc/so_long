@@ -69,6 +69,9 @@ void	print_floor(t_game *game, int x, int y);
 void	print_player(t_game *game, int x, int y);
 void	print_collectible(t_game *game, int x, int y);
 
+// hook
+int		key_hook(int keycode, t_game *game);
+
 // error
 void	arg_error(void);
 void	map_error(void);

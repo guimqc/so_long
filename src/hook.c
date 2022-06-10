@@ -10,35 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	init_game(t_game *game)
+int	key_hook(int keycode, t_game *game)
 {
-	game->map.x = 0;
-	game->map.y = 0;
-	game->map.map = NULL;
-	game->map.exit = 0;
-	game->map.start = 0;
-	game->map.width = -1;
-	game->map.height = 0;
-	game->map.collectible = 0;
-	game->player.x = 0;
-	game->player.y = 0;
-	game->player.moove = -1;
-}
-
-
-
-int	main(int argc, char *argv[])
-{
-	t_game	game;
-
-	if (argc != 2)
-		arg_error();
-	init_game(&game);
-	read_map(argv[1], &game.map);
-	display_map(&game);
-	mlx_key_hook(game.display.mlx_win, key_hook, &game);
-	mlx_loop(game.display.mlx);
-	free(game.map.map);
+	(void) *game;
+	ft_printf("key_code: %i\n", keycode);
+	if (keycode == 53)
+		exit(0);
+	return (0);
 }
