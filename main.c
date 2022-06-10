@@ -27,8 +27,6 @@ void	init_game(t_game *game)
 	game->player.moove = -1;
 }
 
-
-
 int	main(int argc, char *argv[])
 {
 	t_game	game;
