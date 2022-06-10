@@ -26,6 +26,11 @@ void	print_floor(t_game *game, int x, int y)
 
 void	print_player(t_game *game, int x, int y)
 {
+	if (game->player.x != 0 && game->player.y != 0)
+	{
+		mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
+			game->display.floor, 65 * game->player.x, 65 * game->player.y);
+	}
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.floor, 65 * x, 65 * y);
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
