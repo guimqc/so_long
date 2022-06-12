@@ -14,18 +14,21 @@
 // a big problem right know is that unlike the player
 // the collectibles, walls, floors and exit positions (x, y) aren't registered.
 
+static int	can_move(t_game *game, int x_variation, int y_variation)
+{
+	if (game->can_exit == 0
+		&& game->player.x + x_variation == game->exit_coordinate[0]
+		&& game->player.y + y_variation == game->exit_coordinate[1])
+		return (0);
+	return (1);
+}
+
 void	move(t_game *game, int x_variation, int y_variation)
 {
-	int	player_y;
-	int	player_x;
-
-	player_x = game->player.x;
-	player_y = game->player.y;
-	if (game->can_exit == 0
-		&& player_x + x_variation == game->exit_coordinate[0]
-		&& player_y + y_variation == game->exit_coordinate[1])
+	if (!can_move(game, x_variation, y_variation))
 		return ;
-	print_player(game, player_x + x_variation, player_y + y_variation);
+	print_player(game, game->player.x + x_variation,
+		game->player.y + y_variation);
 }
 
 int	key_hook(int keycode, t_game *game)
