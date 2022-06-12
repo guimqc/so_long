@@ -14,6 +14,9 @@
 
 void	init_game(t_game *game)
 {
+	game->can_exit = 0;
+	game->exit_coordinate[0] = 0;
+	game->exit_coordinate[1] = 0;
 	game->map.x = 0;
 	game->map.y = 0;
 	game->map.map = NULL;
@@ -36,7 +39,6 @@ int	main(int argc, char *argv[])
 	init_game(&game);
 	read_map(argv[1], &game.map);
 	display_map(&game);
-	ft_printf("%i", game.map.height);
 	mlx_key_hook(game.display.mlx_win, key_hook, &game);
 	mlx_loop(game.display.mlx);
 	free(game.map.map);

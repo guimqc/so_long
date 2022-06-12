@@ -41,13 +41,14 @@ void	print_player(t_game *game, int x, int y)
 	game->player.moove += 1;
 }
 
-//  register the (x, y) position of the exit when printed.
 void	print_exit(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.floor, 65 * x, 65 * y);
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.exit, 65 * x, 65 * y);
+	game->exit_coordinate[0] = x;
+	game->exit_coordinate[1] = y;
 }
 
 // register the (x, y) position of each collectible when printed.

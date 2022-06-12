@@ -52,6 +52,8 @@ typedef struct Display
 
 typedef struct Game
 {
+	int			can_exit;
+	int			exit_coordinate[2];
 	t_map		map;
 	t_player	player;
 	t_display	display;
