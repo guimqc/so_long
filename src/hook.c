@@ -14,10 +14,15 @@
 
 static int	can_move(t_game *game, int x_variation, int y_variation)
 {
-	if (game->can_exit == 0
-		&& game->player.x + x_variation == game->exit_coordinate[0]
+	if (game->player.x + x_variation == game->exit_coordinate[0]
 		&& game->player.y + y_variation == game->exit_coordinate[1])
-		return (0);
+	{
+		if (game->can_exit == 0)
+			return (0);
+		else
+			exit(0);
+	}
+	ft_printf("%i\n", game->player.moove += 1);
 	return (1);
 }
 

@@ -38,7 +38,6 @@ void	print_player(t_game *game, int x, int y)
 		game->display.player, 65 * x, 65 * y);
 	game->player.x = x;
 	game->player.y = y;
-	game->player.moove += 1;
 }
 
 void	print_exit(t_game *game, int x, int y)
