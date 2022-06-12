@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-// a big problem right know is that unlike the player
-// the collectibles, walls, floors and exit positions (x, y) aren't registered.
 
 static int	can_move(t_game *game, int x_variation, int y_variation)
 {
