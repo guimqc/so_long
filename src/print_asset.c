@@ -12,11 +12,11 @@
 
 #include "../so_long.h"
 
-// register the (x, y) position of the walls when printed
 void	print_wall(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.wall, 65 * x, 65 * y);
+	game->map.map_array[x][y] = 'w';
 }
 
 void	print_floor(t_game *game, int x, int y)
@@ -46,15 +46,14 @@ void	print_exit(t_game *game, int x, int y)
 		game->display.floor, 65 * x, 65 * y);
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.exit, 65 * x, 65 * y);
-	game->exit_coordinate[0] = x;
-	game->exit_coordinate[1] = y;
+	game->map.map_array[x][y] = 'e';
 }
 
-// register the (x, y) position of each collectible when printed.
 void	print_collectible(t_game *game, int x, int y)
 {
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.floor, 65 * x, 65 * y);
 	mlx_put_image_to_window(game->display.mlx, game->display.mlx_win,
 		game->display.collectible, 65 * x, 65 * y);
+	game->map.map_array[x][y] = 'c';
 }

@@ -12,14 +12,21 @@
 
 #include "../so_long.h"
 
-static int	can_move(t_game *game, int x_variation, int y_variation)
+static int	can_move(t_game *game, int new_x, int new_y)
 {
-	if (game->player.x + x_variation == game->exit_coordinate[0]
-		&& game->player.y + y_variation == game->exit_coordinate[1])
+	if (game->map.map_array[new_x][new_y] == 'w')
+		return (0);
+	if (game->map.map_array[new_x][new_y] == 'c')
+	{
+		game->map.collectible--;
+		if (game->map.collectible == 0)
+			game->can_exit = 1;
+	}
+	if (game->map.map_array[new_x][new_y] == 'e')
 	{
 		if (game->can_exit == 0)
 			return (0);
-		else
+		if (game->can_exit == 1)
 			exit(0);
 	}
 	ft_printf("%i\n", game->player.moove += 1);
@@ -28,10 +35,14 @@ static int	can_move(t_game *game, int x_variation, int y_variation)
 
 void	move(t_game *game, int x_variation, int y_variation)
 {
-	if (!can_move(game, x_variation, y_variation))
+	int	new_x;
+	int	new_y;
+
+	new_x = game->player.x + x_variation;
+	new_y = game->player.y + y_variation;
+	if (!can_move(game, new_x, new_y))
 		return ;
-	print_player(game, game->player.x + x_variation,
-		game->player.y + y_variation);
+	print_player(game, new_x, new_y);
 }
 
 int	key_hook(int keycode, t_game *game)

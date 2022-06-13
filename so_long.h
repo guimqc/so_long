@@ -21,6 +21,7 @@
 typedef struct Map
 {
 	char	*map;
+	char	map_array[1000][1000];
 	int		x;
 	int		y;
 	int		width;
@@ -53,7 +54,6 @@ typedef struct Display
 typedef struct Game
 {
 	int			can_exit;
-	int			exit_coordinate[2];
 	t_map		map;
 	t_player	player;
 	t_display	display;

@@ -15,8 +15,6 @@
 void	init_game(t_game *game)
 {
 	game->can_exit = 0;
-	game->exit_coordinate[0] = 0;
-	game->exit_coordinate[1] = 0;
 	game->map.x = 0;
 	game->map.y = 0;
 	game->map.map = NULL;
