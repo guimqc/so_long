@@ -73,6 +73,7 @@ void	print_collectible(t_game *game, int x, int y);
 
 // hook
 int		key_hook(int keycode, t_game *game);
+int		close_x(t_game *game);
 
 // error
 void	arg_error(void);

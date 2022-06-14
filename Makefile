@@ -31,7 +31,7 @@ clean:
 
 fclean: clean
 	cd lib/libft && make fclean -s
-	cd mlx/ && make clean
+	cd lib/mlx/ && make clean
 	$(RM) $(NAME) -s
 
 re: fclean all

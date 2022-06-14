@@ -12,6 +12,12 @@
 
 #include "../so_long.h"
 
+int	close_x(t_game *game)
+{
+	mlx_destroy_window(game->display.mlx, game->display.mlx_win);
+	exit(0);
+}
+
 static int	can_move(t_game *game, int new_x, int new_y)
 {
 	if (game->map.map_array[new_x][new_y] == 'w')
