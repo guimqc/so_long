@@ -1,8 +1,12 @@
-SRCS = main.c src/*.c \
+SRCS = main.c src/map.c src/hook.c src/display.c src/error.c src/print_asset.c \
+
+OBJ = $(SRCS:%c=%o)
 
 NAME = so_long
 
-CC = gcc -Wall -Werror -Wextra -framework OpenGL -framework AppKit -o $(NAME)
+CC = gcc
+
+CFLAGS =  -Wall -Werror -Wextra -c
 
 RM = rm -f
 
@@ -16,19 +20,18 @@ LIBX = lib/mlx/libmlx.a
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	$(MAKELIB)
 	$(MAKELIBX)
-	$(CC) $(SRCS) $(LIB) $(LIBX)
+	$(CC) $(OBJ) $(LIB) $(LIBX) -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	cd lib/libft && make clean -s
+	$(RM) $(OBJ)
 
 fclean: clean
 	cd lib/libft && make fclean -s
+	cd mlx/ && make clean
 	$(RM) $(NAME) -s
 
 re: fclean all
-
-norm:
-	norminette $(SRCS) so_long.h
