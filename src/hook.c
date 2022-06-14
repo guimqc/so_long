@@ -18,6 +18,7 @@ static int	can_move(t_game *game, int new_x, int new_y)
 		return (0);
 	if (game->map.map_array[new_x][new_y] == 'c')
 	{
+		game->map.map_array[new_x][new_y] = '0';
 		game->map.collectible--;
 		if (game->map.collectible == 0)
 			game->can_exit = 1;
