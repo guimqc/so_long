@@ -47,10 +47,12 @@ static void	log_map_spec(t_map *map, char *next_line)
 	{
 		if (next_line[i] == 'E')
 			map->exit += 1;
-		if (next_line[i] == 'P')
+		else if (next_line[i] == 'P')
 			map->start += 1;
-		if (next_line[i] == 'C')
+		else if (next_line[i] == 'C')
 			map->collectible += 1;
+		else if (next_line[i] != '1' && next_line[i] != '0')
+			map_error();
 	}
 	if (map->width == -1)
 		map->width = i;
