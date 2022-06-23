@@ -18,8 +18,8 @@ void	arg_error(void)
 	exit(0);
 }
 
-void	map_error(void)
+void	map_error(t_map *map)
 {
 	ft_printf("Error:\nMap is not valid\n");
-	exit(0);
+	exit_n_free(map);
 }

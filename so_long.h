@@ -21,6 +21,7 @@
 typedef struct Map
 {
 	char	*map;
+	char	*map_path;
 	char	map_array[1000][1000];
 	int		x;
 	int		y;
@@ -60,7 +61,7 @@ typedef struct Game
 }	t_game;
 
 // map
-void	read_map(char *map_path, t_map *map);
+void	read_map(t_map *map);
 
 // display
 void	print_map(t_game *game);
@@ -77,6 +78,7 @@ int		close_x(t_game *game);
 
 // error
 void	arg_error(void);
-void	map_error(void);
+void	map_error(t_map *map);
+void	exit_n_free(t_map *map);
 
 #endif
