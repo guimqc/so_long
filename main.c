@@ -12,6 +12,13 @@
 
 #include "so_long.h"
 
+void	exit_n_free(t_game *game)
+{
+	free(game->map.map);
+	free(game->display.mlx);
+	exit(0);
+}
+
 void	init_game(t_game *game)
 {
 	game->can_exit = 0;
@@ -40,5 +47,5 @@ int	main(int argc, char *argv[])
 	mlx_key_hook(game.display.mlx_win, key_hook, &game);
 	mlx_hook(game.display.mlx_win, 17, 0, close_x, &game);
 	mlx_loop(game.display.mlx);
-	free(game.map.map);
+	exit_n_free(&game);
 }
